@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <header class="">
+            <nav
+            class="position-fixed container bg-white d-flex justify-content-between align-items-center p-4">
+                <i class="icon-none col-6 fa-solid fa-bars" onclick="show()"></i>
+                <a class="col-lg-3 col-sm-6 ">Instagram</a>
+                <div class="col-lg-6 inputGroup d-flex justify-content-between align-items-center  ">
+                    <input type="text" class="bg-secondary w-100 rounded-start  ">
+                    <i class="fa-solid fa-magnifying-glass bg-secondary py-1 rounded-end bg-secondary px-2 "></i>
+                </div>
+                <div class="col-lg-3 col-sm-6 icons d-flex gap-3 justify-content-end align-items-center ">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-video"></i>
+                    <div class="story ">
+                        <img class="profile-img" src="riyan.jpg" alt="person"> 
+                    </div>
+                   <a href="./index.html" class="fs-6 bg-primary text-white px-2 py-1 rounded ">logout</a>
+                </div>
+            </nav>    
+        </header>
+        <div class="aside-bar">
+            <i class="close fa-solid fa-circle-xmark" onclick="hide()"></i>
+            <ul class="d-flex flex-column gap-5 mt-5 h-100">
+            <li class="Notifications" onclick="common(event)">Notifications</li>    
+            <li class="Messages" onclick="common(event)">Messages</li>    
+            </ul>
+        </div>
+        <main class="d-flex justify-content-between">
+            <section class="left common">
+                <div class="fixed">
+
+                    <div class="activity d-flex flex-column mb-3">
+                        <div class="heading d-flex justify-content-between align-items-baseline">
+                            <p class="fw-bold">Activity</p>
+                            <button class="seeAllBtn bg-transparent border-0">See All</button>
+                        </div>
+                        <div class="storyMentions">
+                            <p class="fw-bold">Stories About You</p>
+                        </div>
+                        <div class="notifications">
+                            <p class="fw-bold">New</p>
+                        </div>
+                    </div>
+                    <div class="explore">
+                        <div class="heading d-flex justify-content-between align-items-baseline">
+                            <p class="fw-bold">Explore</p>
+                            <button class="seeAllBtn bg-transparent border-0">See All</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section class="center d-flex flex-column gap-3">
+
+                <section class="stories ">
+                    <button class="scrollbtn" id="scrollButtonLeft"><</button>
+                            <div class="storyParent d-flex justify-content-start gap-4">
+
+                            </div>
+                            <button class="scrollbtn" id="scrollButtonRight">></button>
+                </section>
+
+                <section class="posts d-flex flex-column gap-3">                  
+                </section>
+
+            </section>
+
+            <section class="right common ">
+                <div class="fixed">
+                    <div class="message d-flex flex-column">
+                        <div class="heading d-flex justify-content-between align-items-baseline">
+                            <p class="fw-bold">Message</p>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <div class="search mb-3" id="search-bar">
+                            <input type="text" class="ps-2 rounded border-secondary outline-none"
+                                placeholder="Search Messages">
+                        </div>
+                        <div class="tabs d-flex fs-6 gap-2 border-bottom border-1 border-dark">
+                            <p class="fw-bold border-bottom border-3 pb-2 mb-0 border-dark">primary</p>
+                            <p class="fw-bold mb-0">general</p>
+                            <div class="requests">
+                                <p class="text-primary mb-0 ms-4">Requests</p>
+                            </div>
+                        </div>
+
+                        <div class="friends mt-3 d-flex flex-column gap-3">
+
+                        </div>
+                    </div>
+                    <div class=" mt-3  suggestions d-flex flex-column gap-3">
+                        <div class="heading d-flex justify-content-between align-items-baseline ">
+                            <p class="fw-bold m-0">Suggested for You</p>
+                            <button class="seeAllBtn bg-transparent border-0">See All</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+    </div>
+    <script src="/assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
