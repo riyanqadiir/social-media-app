@@ -26,7 +26,7 @@ form.addEventListener('submit', function (event) {
     localStorage.setItem("form-data", JSON.stringify(data));
     if (validateForm()) {
         event.stopPropagation();
-        window.location.href = '/login.html';
+        window.location.href = './index.html';
     }
   
     

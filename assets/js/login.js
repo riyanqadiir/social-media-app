@@ -9,7 +9,7 @@
         errorMessage.textContent = ''; 
         if (checkCredentials()) {
            
-            window.location.href = './index.html'
+            window.location.href = './app.html'
            
         } else {
             errorMessage.textContent = 'Invalid username or password.';
